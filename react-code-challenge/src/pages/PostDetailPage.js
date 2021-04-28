@@ -18,7 +18,10 @@ const PostDetailPage = ({ getPost, postDetail }) => {
 
   return (
     <div className="post-detail-container">
-      <Post title={title} id={id} userId={userId} body={body} />
+      <div className="go-home">
+        <h3>{'<'} Back</h3>
+      </div>
+      <Post title={title} id={id} userId={userId} body={body} isDetail />
     </div>
   );
 };

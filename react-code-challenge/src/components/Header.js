@@ -1,10 +1,18 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import routesPaths from '../constants/routesPaths';
 import '../styles/components/header.scss';
 
-const Header = () => (
+const Header = ({ history: { push } }) => (
   <div className="header">
-    <h1>PostsApp</h1>
+    <h1
+      onClick={() => {
+        push(routesPaths.home);
+      }}
+    >
+      PostsApp
+    </h1>
   </div>
 );
 
-export default Header;
+export default withRouter(Header);
