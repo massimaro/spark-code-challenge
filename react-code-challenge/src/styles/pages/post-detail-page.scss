@@ -8,8 +8,11 @@
   .go-home {
     display: flex;
     color: darkred;
-    /* padding-left: 1rem; */
     width: 100%;
     max-width: 1000px;
+
+    h3:hover {
+      cursor: pointer;
+    }
   }
 }
