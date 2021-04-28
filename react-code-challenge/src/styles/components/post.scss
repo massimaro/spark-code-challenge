@@ -11,6 +11,7 @@
   border-radius: 10px;
   box-shadow: black 3px 3px 15px -10px;
   transition: transform 0.2s ease-in;
+  overflow: hidden;
 
   &.detail {
     height: 100%;
@@ -23,6 +24,46 @@
     }
   }
 
-  .comments-container {
+  .comments-section {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .comments-container {
+      display: flex;
+      flex-direction: column;
+      overflow-y: scroll;
+
+      .comment {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem 1rem;
+        background: #d0d0d0;
+
+        &:nth-child(odd) {
+          background: #e8e8e8;
+        }
+      }
+    }
+
+    .comment-input-container {
+      display: flex;
+      flex-shrink: 0;
+      padding-top: 1rem;
+
+      .comment-input {
+        padding: 0.5rem;
+        width: 100%;
+        outline: none;
+      }
+
+      .comment-button {
+        border: none;
+        background: $main-color-red;
+        color: white;
+        padding: 0.5rem;
+        font-weight: bold;
+      }
+    }
   }
 }

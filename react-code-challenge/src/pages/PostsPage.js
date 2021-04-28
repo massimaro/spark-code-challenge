@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { array, func } from 'prop-types';
+import { array, func, object } from 'prop-types';
 import withMaster from '../components/hocs/withMaster';
 import { withRouter } from 'react-router-dom';
 import routesPaths from '../constants/routesPaths';
@@ -33,7 +33,7 @@ const PostsPage = ({ getPosts, posts, history: { push } }) => {
 PostsPage.propTypes = {
   getPosts: func.isRequired,
   posts: array,
-  push: func.isRequired,
+  history: object.isRequired,
 };
 
 const mapState = ({ posts }) => ({

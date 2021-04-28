@@ -56,3 +56,39 @@ export const getPost = postId => async dispatch => {
     dispatch(getPostFailure(message));
   }
 };
+
+const getCommentsAction = () => ({
+  type: types.GET_COMMENTS.ACTION,
+});
+const getCommentsSuccess = comments => ({
+  type: types.GET_COMMENTS.SUCCESS,
+  comments,
+});
+const getCommentsFailure = () => ({
+  type: types.GET_COMMENTS.FAILURE,
+});
+
+export const getComments = postId => async dispatch => {
+  try {
+    dispatch(getCommentsAction);
+    const url = `https://jsonplaceholder.typicode.com/comments?postId=${postId}`;
+    axios
+      .get(url)
+      .then(({ data }) => {
+        dispatch(getCommentsSuccess(data));
+      })
+      .catch(({ message }) => {
+        dispatch(getCommentsFailure(message));
+      });
+  } catch ({ message }) {
+    dispatch(getCommentsFailure(message));
+  }
+};
+
+const addCommentSuccess = newComment => ({
+  type: types.ADD_COMMENT,
+  newComment,
+});
+export const addComment = newComment => async dispatch => {
+  dispatch(addCommentSuccess(newComment));
+};
