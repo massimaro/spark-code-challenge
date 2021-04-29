@@ -34,20 +34,6 @@ const Post = ({ id, title, body, clickable, clickFunction, isDetail, comments, a
                   <p>{body}</p>
                 </div>
               ))}
-            {comments &&
-              comments.map(({ name, email, body, id }) => (
-                <div key={id} className="comment">
-                  {name} ({email}):
-                  <p>{body}</p>
-                </div>
-              ))}
-            {comments &&
-              comments.map(({ name, email, body, id }) => (
-                <div key={id} className="comment">
-                  {name} ({email}):
-                  <p>{body}</p>
-                </div>
-              ))}
           </div>
           <form className="comment-input-container" onSubmit={addComment}>
             <input
