@@ -86,6 +86,7 @@ export const getComments = postId => async dispatch => {
   }
 };
 
+// Fake add new comment, storing directly on redux. In a real world, we would call an api endpoint with a post method, and then get the new comments collection and store that in redux to have it properly synced.
 const addCommentSuccess = newComment => ({
   type: types.ADD_COMMENT,
   newComment,
