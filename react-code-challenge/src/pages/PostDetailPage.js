@@ -23,6 +23,7 @@ const PostDetailPage = ({ getPost, getComments, addComment, postDetail, postDeta
   }, [getComments, postDetail]);
 
   const addCommentHandler = newComment => {
+    // Hardcoded name and email and id to simulate logged user and new comment id created and returned from the server
     addComment({
       name: 'My Name',
       email: 'myemail@gmail.com',
