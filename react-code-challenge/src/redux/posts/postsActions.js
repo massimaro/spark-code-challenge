@@ -1,5 +1,6 @@
 import * as types from './postsTypes';
 import axios from 'axios';
+import apiRoutes from '../../constants/apiRoutes';
 
 const getPostsAction = () => ({
   type: types.GET_POSTS.ACTION,
@@ -15,7 +16,7 @@ const getPostsFailure = () => ({
 export const getPosts = () => async dispatch => {
   try {
     dispatch(getPostsAction);
-    const url = 'https://jsonplaceholder.typicode.com/posts';
+    const url = apiRoutes.getPosts;
     axios
       .get(url)
       .then(({ data }) => {
@@ -43,7 +44,7 @@ const getPostFailure = () => ({
 export const getPost = postId => async dispatch => {
   try {
     dispatch(getPostAction);
-    const url = `https://jsonplaceholder.typicode.com/posts/${postId}`;
+    const url = apiRoutes.getPost.replace(':id', postId);
     axios
       .get(url)
       .then(({ data }) => {
@@ -71,7 +72,7 @@ const getCommentsFailure = () => ({
 export const getComments = postId => async dispatch => {
   try {
     dispatch(getCommentsAction);
-    const url = `https://jsonplaceholder.typicode.com/comments?postId=${postId}`;
+    const url = apiRoutes.getComments.replace(':id', postId);
     axios
       .get(url)
       .then(({ data }) => {
