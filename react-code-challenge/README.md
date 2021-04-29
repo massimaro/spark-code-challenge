@@ -1,4 +1,4 @@
-welcome to PostsApp!
+Welcome to PostsApp!
 
 Installation:
 1- Developed and tested with Node v14.16.1
